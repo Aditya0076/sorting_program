@@ -106,9 +106,10 @@ Merge Sort adalah algoritma pengurutan berbasis divide-and-conquer yang membagi 
    - Bagi array menjadi dua bagian yang sama.
    - Urutkan masing-masing bagian menggunakan Merge Sort secara rekursif.
    - Gabungkan dua bagian yang terurut menjadi satu array yang terurut.
+
 **f. Gambaran Algoritma Merge.**
 
-![Gambar Algoritma Merge](Assets/Merge Sort.png)
+![Gambar Algoritma Merge](/Assets/Merge%20Sort.png)
 
 **5. Quick Sort.**
 
