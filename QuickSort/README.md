@@ -1,44 +1,41 @@
 **Pseudocode**
 ~~~
-QuickSort(array, low, high):
-    // Memastikan bahwa bagian array yang akan diurutkan valid (low < high)
-    if low < high:
-        // Memanggil fungsi Partition untuk membagi array dan mendapatkan indeks pivot
-        pivotIndex = Partition(array, low, high)
-        
-        // Rekursif, mengurutkan bagian kiri array sebelum pivot
-        QuickSort(array, low, pivotIndex - 1)
-        
-        // Rekursif, mengurutkan bagian kanan array setelah pivot
-        QuickSort(array, pivotIndex + 1, high)
+QuickSort(arr, low, high)
+    if low < high then
+        // Partisi array dan dapatkan indeks pivot
+        pivotIndex = Partition(arr, low, high)
+        // Panggil QuickSort pada bagian kiri dari pivot
+        QuickSort(arr, low, pivotIndex - 1)
+        // Panggil QuickSort pada bagian kanan dari pivot
+        QuickSort(arr, pivotIndex + 1, high)
+    endif
+end QuickSort
 
-// Fungsi untuk membagi array menjadi dua bagian berdasarkan pivot
-Partition(array, low, high):
-    // Memilih pivot (biasanya elemen terakhir)
-    pivot = array[high]
-    // Inisialisasi indeks untuk elemen terkecil
-    smallerIndex = low - 1
-    
-    // Iterasi melalui bagian array yang akan dipartisi
-    for i = low to high - 1:
-        // Jika elemen saat ini kurang dari pivot
-        if array[i] < pivot:
-            // Meningkatkan indeks elemen terkecil
-            smallerIndex = smallerIndex + 1
-            // Menukar elemen yang lebih kecil dengan elemen saat ini
-            Swap(array, i, smallerIndex)
-    
-    // Menukar pivot dengan elemen setelah elemen terkecil
-    Swap(array, smallerIndex + 1, high)
-    
-    // Mengembalikan indeks pivot yang baru
-    return smallerIndex + 1
+Partition(arr, low, high)
+    // Pilih elemen terakhir sebagai pivot
+    pivot = arr[high]
+    // Inisialisasi indeks elemen yang lebih kecil dari pivot
+    i = low - 1
+    // Iterasi untuk memindahkan elemen yang lebih kecil dari pivot ke bagian kiri array
+    for j from low to high - 1 do
+        if arr[j] < pivot then
+            i = i + 1
+            // Tukar elemen di i dengan elemen di j
+            Swap(arr, i, j)
+        endif
+    endfor
+    // Tempatkan pivot di posisi yang benar
+    Swap(arr, i + 1, high)
+    // Kembalikan indeks pivot
+    return i + 1
+end Partition
 
-// Fungsi untuk menukar nilai dua elemen dalam array
-Swap(array, i, j):
-    temp = array[i]
-    array[i] = array[j]
-    array[j] = temp
+//Pertukaran array
+Swap(arr, a, b)
+    temp = arr[a]
+    arr[a] = arr[b]
+    arr[b] = temp
+end Swap
 
 ~~~
 
@@ -78,3 +75,6 @@ Ketika kedua bagian sudah terurut, kita gabungkan kembali array tersebut dengan 
 ~~~
 [1, 2, 3, 4, 5, 6, 7, 8]
 ~~~
+
+**Gambar Ilustrasi Algoritma QuickSort**
+![Gambar Algoritma QuickSort](../Assets/QuickSort.png)

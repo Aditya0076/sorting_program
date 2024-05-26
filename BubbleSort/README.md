@@ -89,3 +89,6 @@ Misalkan kita punya array arr = [5, 3, 8, 4, 2] dengan n = 5:
 - Iterasi 4 (i = 3):
   - j = 0: bandingkan 3 dan 2, tukar menjadi [2, 3, 4, 5, 8]
   - Semua elemen sudah terurut: [2, 3, 4, 5, 8].
+
+**Gambar Ilustrasi Algoritma BubbleSort**
+![Gambar Algoritma BubbleSort](../Assets/Bubble%20Sort.png)

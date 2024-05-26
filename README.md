@@ -82,6 +82,7 @@ Insertion Sort adalah algoritma pengurutan yang membangun array terurut satu per
    - Ulangi langkah ini untuk semua elemen dalam array.
 
 **f. Gambaran Algoritma Insertion.**
+![Gambar Algoritma Insertion](/Assets/InsertionSort.png)
 
 **4. Merge Sort.**
 
@@ -136,4 +137,4 @@ Quick Sort adalah algoritma pengurutan berbasis divide-and-conquer yang memilih 
    - Gabungkan bagian yang terurut.
 
 **f. Gambaran Algoritma Quick Sort.**
-
+![Gambar Algoritma QuickSort](/Assets/QuickSort.png)

@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 public class SelectionSort {
     public static void main(String[] args) {
         //      input jumlah array
@@ -13,15 +13,16 @@ public class SelectionSort {
         }
 
         // melakukan looping untuk sorting array menggunakan selection sort
-        //looping untu
         for (int i = 0; i < jumlah-1; i++) {
-            for (int j = i+1; j < jumlah; j++) {
+            for (int j = i+1; j < jumlah-1; j++) {
                 // mengecek apakah array berindeks i lebih dari array berindeks j
                 if (array[i] > array[j]) {
-                    int temp = array[i];
-                    array[i] = array[j];
-                    array[j] = temp;
+                    // Penukaran value terkecil dengan value pertama dari bagian tidak terurut
+                    int temp= array[i];
+                    array[i]= array[j];
+                    array[j]= temp;
                 }
+
             }
         }
 

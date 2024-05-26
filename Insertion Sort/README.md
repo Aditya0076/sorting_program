@@ -118,3 +118,6 @@ Array setelah langkah ini:
 ~~~
 {1, 2, 3, 4, 5, 6}
 ~~~
+
+**Gambar Ilustrasi Algoritma InsertionSort**
+![Gambar Algoritma InsertionSort](../Assets/InsertionSort.png)

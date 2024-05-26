@@ -1,86 +1,72 @@
 import java.util.*;
 
 public class QuickSort {
-    // Metode untuk memulai proses pengurutan QuickSort
-    void Sort(int[] arr) {
-        if (arr == null || arr.length == 0) {
-            return;
-        }
-        int low = 0;
-        int high = arr.length - 1;
-        quickSort(arr, low, high);
-    }
-
-    // Metode rekursif untuk membagi dan mengurutkan array menggunakan QuickSort
-    void quickSort(int[] arr, int low, int high) {
-        if (low < high) {
-            // Dapatkan indeks pivot setelah partisi
-            int pivotIndex = partition(arr, low, high);
-            // Panggil QuickSort rekursif untuk partisi sebelum pivot
-            quickSort(arr, low, pivotIndex - 1);
-            // Panggil QuickSort rekursif untuk partisi setelah pivot
-            quickSort(arr, pivotIndex + 1, high);
-        }
-    }
-
-    // Metode untuk membagi array dan mendapatkan indeks pivot
+    // Fungsi untuk melakukan partisi pada array
     int partition(int[] arr, int low, int high) {
-        // Pilih pivot (misalnya, elemen terakhir)
+        // Memilih elemen terakhir sebagai pivot
         int pivot = arr[high];
-        // Inisialisasi indeks untuk elemen terkecil
-        int smallerIndex = low - 1;
-
-        // Lakukan partisi array
-        for (int i = low; i < high; i++) {
-            // Jika elemen saat ini kurang dari pivot
-            if (arr[i] < pivot) {
-                // Tingkatkan indeks elemen terkecil
-                smallerIndex++;
-                // Tukar elemen yang lebih kecil dengan elemen saat ini
-                swap(arr, i, smallerIndex);
+        // Inisialisasi indeks elemen yang lebih kecil dari pivot
+        int i = low - 1;
+        // Iterasi untuk memindahkan elemen yang lebih kecil dari pivot ke bagian kiri array
+        for (int j = low; j < high; j++) {
+            // Jika elemen saat ini lebih kecil dari pivot
+            if (arr[j] < pivot) {
+                i++;
+                // Tukar elemen di i dengan elemen di j
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
             }
         }
-
-        // Tukar pivot dengan elemen setelah elemen terkecil
-        swap(arr, smallerIndex + 1, high);
-
-        // Kembalikan indeks pivot yang baru
-        return smallerIndex + 1;
+        // Tempatkan pivot di posisi yang benar
+        int temp = arr[i + 1];
+        arr[i + 1] = arr[high];
+        arr[high] = temp;
+        // Kembalikan indeks pivot
+        return i + 1;
     }
 
-    // Metode untuk menukar nilai dua elemen dalam array
-    void swap(int[] arr, int i, int j) {
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-    }
-
-    // Metode untuk mencetak array
-    void printArray(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
+    // Fungsi untuk melakukan QuickSort pada array
+    void quickSort(int[] arr, int low, int high) {
+        // Jika low lebih kecil dari high, berarti array masih perlu diurutkan
+        if (low < high) {
+            // Partisi array dan dapatkan indeks pivot
+            int pivot = partition(arr, low, high);
+            // Panggil quickSort secara rekursif pada bagian kiri dari pivot
+            quickSort(arr, low, pivot - 1);
+            // Panggil quickSort secara rekursif pada bagian kanan dari pivot
+            quickSort(arr, pivot + 1, high);
         }
-        System.out.println();
     }
 
-    // Metode main untuk menjalankan program
+    // Fungsi main untuk menjalankan program
     public static void main(String[] args) {
-        // Membaca input dari pengguna untuk ukuran dan elemen array
+        // Membuat objek Scanner untuk input dari pengguna
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter the size of the array: ");
+        // Meminta pengguna memasukkan ukuran array
+        System.out.print("Enter the size of the array: ");
         int jumlah = input.nextInt();
+        // Membuat array dengan ukuran yang dimasukkan oleh pengguna
         int[] array = new int[jumlah];
-        System.out.println("Enter the elements of the array: ");
+        // Meminta pengguna memasukkan elemen-elemen array
         for (int i = 0; i < jumlah; i++) {
             array[i] = input.nextInt();
         }
+        // Menampilkan array sebelum diurutkan
+        System.out.print("Array unsorted: ");
+        for (int i = 0; i < jumlah; i++) {
+            System.out.print(array[i] + " ");
+        }
+        System.out.println();
 
-        // Membuat objek QuickSort dan mengurutkan array
-        QuickSort qs = new QuickSort();
-        qs.Sort(array);
+        // Membuat objek QuickSort dan memanggil fungsi quickSort
+        QuickSort quickSort = new QuickSort();
+        quickSort.quickSort(array, 0, array.length - 1);
 
-        // Mencetak array yang telah diurutkan
+        // Menampilkan array setelah diurutkan
         System.out.print("Sorted array: ");
-        qs.printArray(array);
+        for (int i = 0; i < jumlah; i++) {
+            System.out.print(array[i] + " ");
+        }
     }
 }

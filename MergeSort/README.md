@@ -97,3 +97,6 @@ Misalkan kita memiliki array awal [38, 27, 43, 3, 9, 82, 10]. Berikut adalah ilu
      - Sub-array yang telah diurutkan digabungkan kembali secara berurutan. Misalnya, [3, 27, 38, 43] dan [9, 10, 82] digabungkan menjadi [3, 9, 10, 27, 38, 43, 82].
 
 Dengan demikian, kita mendapatkan array yang telah diurutkan [3, 9, 10, 27, 38, 43, 82].
+
+**Gambar Ilustrasi Algoritma MergeSort**
+![Gambar Algoritma MergeSort](../Assets/Merge%20Sort.png)
