@@ -91,4 +91,5 @@ Misalkan kita punya array arr = [5, 3, 8, 4, 2] dengan n = 5:
   - Semua elemen sudah terurut: [2, 3, 4, 5, 8].
 
 **Gambar Ilustrasi Algoritma BubbleSort**
-![Gambar Algoritma BubbleSort](../Assets/Bubble%20Sort.png)
+
+![Gambar Algoritma BubbleSort](/Assets/Bubble%20Sort.png)
