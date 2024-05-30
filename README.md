@@ -26,7 +26,7 @@ Bubble Sort adalah algoritma pengurutan yang sederhana. Algoritma ini bekerja de
 
 **f. Gambaran Algoritma Bubble.**
 
-![Gambar Algoritma Bubble](/Assets/Bubble Sort.png)
+![Gambar Algoritma Bubble] (/Asset/Bubble Sort.png)
 
 **2. Selection Sort.**
 
